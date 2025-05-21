@@ -12,7 +12,7 @@ jobs:
         shell: bash
 
       - name: Display the path
-        run: |  
+        run: |
                 node --version
                 npm --version
                 pwd
@@ -22,6 +22,17 @@ jobs:
       - name: Display the processor
         run: |
           import platform
-          print (platform.system()) 
+          print (platform.system())
           print (platform.processor())
         shell: python
+
+  comandos_windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: PowerShell
+        run: |
+                Get-Location
+                Get-ChildItem
+        shell: powershell
+
